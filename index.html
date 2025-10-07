@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Bird Clone</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="game-panel">
+        <canvas id="game" width="480" height="640" aria-label="Flappy Bird canvas" role="img"></canvas>
+        <div class="hud" aria-live="polite">
+          <div class="score">Score: <span id="score">0</span></div>
+          <div class="score">Best: <span id="best">0</span></div>
+          <button id="start" class="primary">Start</button>
+          <button id="restart" class="secondary" hidden>Restart</button>
+        </div>
+      </section>
+      <section class="instructions">
+        <h1>Flappy Bird</h1>
+        <p>
+          Tap <kbd>Space</kbd> or click the screen to flap. Avoid the pipes and try to
+          stay airborne for as long as possible.
+        </p>
+        <ul>
+          <li>Click or tap anywhere inside the game canvas to flap.</li>
+          <li>The pipes get closer together the longer you survive.</li>
+          <li>Your score increases every time you pass a set of pipes.</li>
+        </ul>
+        <p class="small-print">Built with vanilla JavaScript and the HTML5 Canvas API.</p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
