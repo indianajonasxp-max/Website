@@ -5,15 +5,17 @@ const bestEl = document.getElementById("best");
 const startButton = document.getElementById("start");
 const restartButton = document.getElementById("restart");
 
+const EASIER_FACTOR = 4;
+
 const CONFIG = {
-  gravity: 1200, // px/s^2
-  jumpVelocity: -420, // px/s
-  pipeSpacing: 210,
+  gravity: 1200 / 2, // lower gravity for slower falls
+  jumpVelocity: -420 / 2, // softer flap to match reduced gravity
+  pipeSpacing: 210 * 2, // pipes spawn further apart
   pipeWidth: 80,
-  pipeSpeed: 200,
-  minGap: 110,
-  maxGap: 180,
-  difficultyRamp: 0.985,
+  pipeSpeed: 200 / 2, // pipes move slower across the screen
+  minGap: 110 * 2, // wider minimum gap between pipes
+  maxGap: 180 * 2, // wider maximum gap
+  difficultyRamp: 1 - (1 - 0.985) / EASIER_FACTOR, // slower difficulty increase
 };
 
 const bird = {
